@@ -48,7 +48,6 @@
 		04D27E402215183800638961 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D27E372215183800638961 /* FMDatabase.m */; };
 		04D27E412215183800638961 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D27E3B2215183800638961 /* FMDatabasePool.m */; };
 		04D27E422215183800638961 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D27E3C2215183800638961 /* FMResultSet.m */; };
-		04D27E432215183800638961 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D27E3D2215183800638961 /* Info.plist */; };
 		04E3BCE22215196800D422B9 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E3BCA52215196800D422B9 /* UIImage+WebP.m */; };
 		04E3BCE32215196800D422B9 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E3BCA62215196800D422B9 /* MKAnnotationView+WebCache.m */; };
 		04E3BCE42215196800D422B9 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E3BCAD2215196800D422B9 /* SDWebImageManager.m */; };
@@ -82,6 +81,7 @@
 		04E3BD0622151B8E00D422B9 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E3BD0122151B8E00D422B9 /* FLAnimatedImage.m */; };
 		04E3BD0722151B8E00D422B9 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E3BD0222151B8E00D422B9 /* FLAnimatedImageView.m */; };
 		04E3BD0C22151BDA00D422B9 /* HSUpdateApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E3BD0A22151BDA00D422B9 /* HSUpdateApp.m */; };
+		3CBC81BC231A029100AA25AE /* XMLimitCharViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBC81BB231A029100AA25AE /* XMLimitCharViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +256,8 @@
 		04E3BD0522151B8E00D422B9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E3BD0A22151BDA00D422B9 /* HSUpdateApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSUpdateApp.m; sourceTree = "<group>"; };
 		04E3BD0B22151BDA00D422B9 /* HSUpdateApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSUpdateApp.h; sourceTree = "<group>"; };
+		3CBC81BA231A029100AA25AE /* XMLimitCharViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMLimitCharViewController.h; sourceTree = "<group>"; };
+		3CBC81BB231A029100AA25AE /* XMLimitCharViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMLimitCharViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 		04D27D762215151B00638961 /* XWTools */ = {
 			isa = PBXGroup;
 			children = (
+				3CBC81B7231A013B00AA25AE /* Bussiness */,
 				04D27E302215183800638961 /* ThirdParty */,
 				04D27DA92215159B00638961 /* Tools */,
 				04D27D772215151B00638961 /* AppDelegate.h */,
@@ -595,6 +598,31 @@
 			path = HSUpdateApp;
 			sourceTree = "<group>";
 		};
+		3CBC81B7231A013B00AA25AE /* Bussiness */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC81B9231A015B00AA25AE /* 字符限制 */,
+				3CBC81B8231A014800AA25AE /* Main */,
+			);
+			path = Bussiness;
+			sourceTree = "<group>";
+		};
+		3CBC81B8231A014800AA25AE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3CBC81B9231A015B00AA25AE /* 字符限制 */ = {
+			isa = PBXGroup;
+			children = (
+				3CBC81BA231A029100AA25AE /* XMLimitCharViewController.h */,
+				3CBC81BB231A029100AA25AE /* XMLimitCharViewController.m */,
+			);
+			path = "字符限制";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -698,7 +726,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04D27E432215183800638961 /* Info.plist in Resources */,
 				04D27D842215151D00638961 /* LaunchScreen.storyboard in Resources */,
 				04D27D812215151D00638961 /* Assets.xcassets in Resources */,
 				04D27D7F2215151B00638961 /* Main.storyboard in Resources */,
@@ -753,6 +780,7 @@
 				04D27E172215159B00638961 /* UIImage+CXWPlaceImage.m in Sources */,
 				04D27E092215159B00638961 /* UITextField+CXWTF.m in Sources */,
 				04E3BCFE2215196800D422B9 /* UIButton+WebCache.m in Sources */,
+				3CBC81BC231A029100AA25AE /* XMLimitCharViewController.m in Sources */,
 				04E3BCEB2215196800D422B9 /* UIImage+GIF.m in Sources */,
 				04E3BCE42215196800D422B9 /* SDWebImageManager.m in Sources */,
 				04E3BCFF2215196800D422B9 /* SDWebImageWebPCoder.m in Sources */,
@@ -965,8 +993,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6BDQKACP84;
+				DEVELOPMENT_TEAM = RJKJ2LAS3B;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGET_NAME)/Tools/PCH/Header.h";
 				INFOPLIST_FILE = XWTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -976,6 +1005,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AVSNest.XWTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -984,8 +1014,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6BDQKACP84;
+				DEVELOPMENT_TEAM = RJKJ2LAS3B;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGET_NAME)/Tools/PCH/Header.h";
 				INFOPLIST_FILE = XWTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -995,6 +1026,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AVSNest.XWTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
