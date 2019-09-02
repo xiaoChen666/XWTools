@@ -828,7 +828,6 @@
 			isa = PBXGroup;
 			children = (
 				3C0FEA92231CEDF5005DC1DF /* Base */,
-				3C0FE821231CEDF4005DC1DF /* Bussiness */,
 				3C0FEABE231CEDF5005DC1DF /* Launch */,
 				3C0FE77A231CEDF4005DC1DF /* Main */,
 				3C0FE823231CEDF4005DC1DF /* Resource */,
@@ -956,21 +955,6 @@
 				3C0FEC5E231CF7C6005DC1DF /* ViewController */,
 			);
 			path = NewsModel;
-			sourceTree = "<group>";
-		};
-		3C0FE821231CEDF4005DC1DF /* Bussiness */ = {
-			isa = PBXGroup;
-			children = (
-				3C0FE822231CEDF4005DC1DF /* 字符限制 */,
-			);
-			path = Bussiness;
-			sourceTree = "<group>";
-		};
-		3C0FE822231CEDF4005DC1DF /* 字符限制 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "字符限制";
 			sourceTree = "<group>";
 		};
 		3C0FE823231CEDF4005DC1DF /* Resource */ = {
