@@ -62,8 +62,7 @@
             }else if (appStoreVersion.length==1){
                 appStoreVersion  = [appStoreVersion stringByAppendingString:@"00"];
             }
-            if([currentVersion floatValue] < [appStoreVersion floatValue])
-            {
+            if([currentVersion floatValue] < [appStoreVersion floatValue]) {
                 CXWLog(@"【4】判断结果：当前版本号%@ < 商店版本号%@ 需要更新\n=========我是分割线========",[[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"],appInfoDic[@"results"][0][@"version"]);
                 block(currentVersion,appInfoDic[@"results"][0][@"version"],appInfoDic[@"results"][0][@"trackViewUrl"],YES);
             }else{
