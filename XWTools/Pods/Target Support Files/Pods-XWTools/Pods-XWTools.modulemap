@@ -1,0 +1,6 @@
+framework module Pods_XWTools {
+  umbrella header "Pods-XWTools-umbrella.h"
+
+  export *
+  module * { export * }
+}

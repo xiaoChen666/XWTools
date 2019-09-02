@@ -1,0 +1,37 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+pod 'SDWebImage',  '~> 5.0.0'
+pod 'MJRefresh',  '~> 3.1.15.7'
+pod 'Masonry',  '~> 1.1.0'
+pod 'YYKit'
+
+  # 集成微信(精简版0.2M)
+  pod 'UMCShare/Social/ReducedWeChat'
+  # 集成QQ/QZone/TIM(精简版0.5M)
+  pod 'UMCShare/Social/ReducedQQ'
+  # 集成新浪微博(精简版1M)
+  pod 'UMCShare/Social/ReducedSina'
+  #友盟分享依赖库
+  pod 'UMCCommon'
+  pod 'UMCAnalytics'
+
+ pod 'UMCShare/UI'
+
+target 'XWTools' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for XWTools
+
+  target 'XWToolsTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'XWToolsUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
