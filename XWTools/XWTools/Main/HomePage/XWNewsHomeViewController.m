@@ -56,7 +56,7 @@
 #pragma mark UI
 - (void)init_UI {
     
-    self.sourArr = @[@"字符限制",@"",@""];
+    self.sourArr = @[@"字符限制",@"自定义下拉刷新",@""];
     
     
     [self.view addSubview:self.tableView];
