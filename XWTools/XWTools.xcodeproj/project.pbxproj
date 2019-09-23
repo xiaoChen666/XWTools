@@ -215,6 +215,7 @@
 		3C0FEC5A231CEF89005DC1DF /* HSUpdateApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FEC59231CEF89005DC1DF /* HSUpdateApp.m */; };
 		3C0FEC5D231CF65F005DC1DF /* XWInputTF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FEC5C231CF65F005DC1DF /* XWInputTF.m */; };
 		3C0FEC61231CF7DC005DC1DF /* XMLimitCharViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FEC60231CF7DC005DC1DF /* XMLimitCharViewController.m */; };
+		3CA9A52F23385376003EC10D /* XWCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA9A52E23385376003EC10D /* XWCameraViewController.m */; };
 		56218BA35C8DF6298C348229 /* Pods_XWToolsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E8FAC933B360E925EE237A /* Pods_XWToolsTests.framework */; };
 		A5C6274C5AD0377AC068E463 /* Pods_XWToolsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435F72F8CE3928BD69BC0D3B /* Pods_XWToolsUITests.framework */; };
 		B0CD709D943C9397C7571874 /* Pods_XWTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4190D13B11AAAF20DD02C63 /* Pods_XWTools.framework */; };
@@ -656,6 +657,8 @@
 		3C0FEC5C231CF65F005DC1DF /* XWInputTF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWInputTF.m; sourceTree = "<group>"; };
 		3C0FEC5F231CF7DC005DC1DF /* XMLimitCharViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLimitCharViewController.h; sourceTree = "<group>"; };
 		3C0FEC60231CF7DC005DC1DF /* XMLimitCharViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLimitCharViewController.m; sourceTree = "<group>"; };
+		3CA9A52D23385376003EC10D /* XWCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWCameraViewController.h; sourceTree = "<group>"; };
+		3CA9A52E23385376003EC10D /* XWCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWCameraViewController.m; sourceTree = "<group>"; };
 		435F72F8CE3928BD69BC0D3B /* Pods_XWToolsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XWToolsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C81C1D72C5168361537AC9 /* Pods-XWToolsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWToolsTests.release.xcconfig"; path = "Target Support Files/Pods-XWToolsTests/Pods-XWToolsTests.release.xcconfig"; sourceTree = "<group>"; };
 		86DA20BE37C94D0D2A531C01 /* Pods-XWToolsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XWToolsUITests.release.xcconfig"; path = "Target Support Files/Pods-XWToolsUITests/Pods-XWToolsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -763,7 +766,6 @@
 			isa = PBXGroup;
 			children = (
 				3C0FE77B231CEDF4005DC1DF /* HomePage */,
-				3C0FE782231CEDF4005DC1DF /* TestModel */,
 				3C0FE7BF231CEDF4005DC1DF /* MeModel */,
 				3C0FE7EF231CEDF4005DC1DF /* LoginModel */,
 				3C0FE801231CEDF4005DC1DF /* NewsModel */,
@@ -782,13 +784,6 @@
 				3C0FE77E231CEDF4005DC1DF /* XWTestHomeViewController.m */,
 			);
 			path = HomePage;
-			sourceTree = "<group>";
-		};
-		3C0FE782231CEDF4005DC1DF /* TestModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TestModel;
 			sourceTree = "<group>";
 		};
 		3C0FE7BF231CEDF4005DC1DF /* MeModel */ = {
@@ -896,12 +891,12 @@
 		3C0FE834231CEDF4005DC1DF /* PCH */ = {
 			isa = PBXGroup;
 			children = (
-				3C0FE835231CEDF4005DC1DF /* Header.h */,
-				3C0FE836231CEDF4005DC1DF /* CXWConst.h */,
-				3C0FE837231CEDF4005DC1DF /* CXWPublicBlock.h */,
 				3C0FE838231CEDF4005DC1DF /* BuglyHotfixConfuse_pch.h */,
+				3C0FE836231CEDF4005DC1DF /* CXWConst.h */,
 				3C0FE839231CEDF4005DC1DF /* CXWConst.m */,
+				3C0FE837231CEDF4005DC1DF /* CXWPublicBlock.h */,
 				3C0FE83A231CEDF4005DC1DF /* CXWPublicBlock.m */,
+				3C0FE835231CEDF4005DC1DF /* Header.h */,
 			);
 			path = PCH;
 			sourceTree = "<group>";
@@ -1047,23 +1042,23 @@
 		3C0FE890231CEDF4005DC1DF /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				3C0FEC57231CEF83005DC1DF /* HSUpdateApp */,
-				3C0FE891231CEDF5005DC1DF /* NewPagedFlowView */,
-				3C0FE976231CEDF5005DC1DF /* Toast */,
-				3C0FE979231CEDF5005DC1DF /* FDTemplateLayoutCell */,
-				3C0FE982231CEDF5005DC1DF /* WMPageController */,
-				3C0FE9AB231CEDF5005DC1DF /* SVProgressHUD */,
-				3C0FE9B6231CEDF5005DC1DF /* SKFCamera */,
-				3C0FE9D3231CEDF5005DC1DF /* FSScrollContentViewLib */,
-				3C0FE9D9231CEDF5005DC1DF /* PGPickerView */,
-				3C0FE9E2231CEDF5005DC1DF /* IQKeyboardManager */,
-				3C0FEA05231CEDF5005DC1DF /* CYLTableViewPlaceHolder */,
 				3C0FEA0A231CEDF5005DC1DF /* AFNetworking */,
-				3C0FEA2E231CEDF5005DC1DF /* PGDatePicker */,
-				3C0FEA62231CEDF5005DC1DF /* WclEmitterButton */,
-				3C0FEA66231CEDF5005DC1DF /* SDCycleScrollView */,
-				3C0FEA76231CEDF5005DC1DF /* WEBPFrameWork */,
+				3C0FEA05231CEDF5005DC1DF /* CYLTableViewPlaceHolder */,
+				3C0FE979231CEDF5005DC1DF /* FDTemplateLayoutCell */,
+				3C0FE9D3231CEDF5005DC1DF /* FSScrollContentViewLib */,
+				3C0FEC57231CEF83005DC1DF /* HSUpdateApp */,
+				3C0FE9E2231CEDF5005DC1DF /* IQKeyboardManager */,
 				3C0FEA7B231CEDF5005DC1DF /* JSONModel */,
+				3C0FE891231CEDF5005DC1DF /* NewPagedFlowView */,
+				3C0FEA2E231CEDF5005DC1DF /* PGDatePicker */,
+				3C0FE9D9231CEDF5005DC1DF /* PGPickerView */,
+				3C0FEA66231CEDF5005DC1DF /* SDCycleScrollView */,
+				3C0FE9B6231CEDF5005DC1DF /* SKFCamera */,
+				3C0FE9AB231CEDF5005DC1DF /* SVProgressHUD */,
+				3C0FE976231CEDF5005DC1DF /* Toast */,
+				3C0FEA62231CEDF5005DC1DF /* WclEmitterButton */,
+				3C0FEA76231CEDF5005DC1DF /* WEBPFrameWork */,
+				3C0FE982231CEDF5005DC1DF /* WMPageController */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -1547,16 +1542,16 @@
 		3C0FEAAE231CEDF5005DC1DF /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3C0FEAB6231CEDF5005DC1DF /* CXWBaseNavigationController.h */,
 				3C0FEAAF231CEDF5005DC1DF /* CXWBaseNavigationController.m */,
+				3C0FEAB3231CEDF5005DC1DF /* CXWBaseViewController.h */,
+				3C0FEAB8231CEDF5005DC1DF /* CXWBaseViewController.m */,
+				3C0FEAB5231CEDF5005DC1DF /* CXWHiddenNaviLineViewController.h */,
 				3C0FEAB0231CEDF5005DC1DF /* CXWHiddenNaviLineViewController.m */,
+				3C0FEAB4231CEDF5005DC1DF /* CXWNOKeyBoardManagerViewController.h */,
 				3C0FEAB1231CEDF5005DC1DF /* CXWNOKeyBoardManagerViewController.m */,
 				3C0FEAB2231CEDF5005DC1DF /* CXWRootViewController.h */,
-				3C0FEAB3231CEDF5005DC1DF /* CXWBaseViewController.h */,
-				3C0FEAB4231CEDF5005DC1DF /* CXWNOKeyBoardManagerViewController.h */,
-				3C0FEAB5231CEDF5005DC1DF /* CXWHiddenNaviLineViewController.h */,
-				3C0FEAB6231CEDF5005DC1DF /* CXWBaseNavigationController.h */,
 				3C0FEAB7231CEDF5005DC1DF /* CXWRootViewController.m */,
-				3C0FEAB8231CEDF5005DC1DF /* CXWBaseViewController.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -1564,9 +1559,9 @@
 		3C0FEAB9231CEDF5005DC1DF /* BaseModel */ = {
 			isa = PBXGroup;
 			children = (
-				3C0FEABA231CEDF5005DC1DF /* CXWRootModel.h */,
 				3C0FEABB231CEDF5005DC1DF /* CXWBaseJsonModel.h */,
 				3C0FEABC231CEDF5005DC1DF /* CXWBaseJsonModel.m */,
+				3C0FEABA231CEDF5005DC1DF /* CXWRootModel.h */,
 				3C0FEABD231CEDF5005DC1DF /* CXWRootModel.m */,
 			);
 			path = BaseModel;
@@ -1605,6 +1600,8 @@
 			children = (
 				3C0FEC5F231CF7DC005DC1DF /* XMLimitCharViewController.h */,
 				3C0FEC60231CF7DC005DC1DF /* XMLimitCharViewController.m */,
+				3CA9A52D23385376003EC10D /* XWCameraViewController.h */,
+				3CA9A52E23385376003EC10D /* XWCameraViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1915,6 +1912,7 @@
 				3C0FEC3F231CEDF6005DC1DF /* CXWBaseTabView.m in Sources */,
 				3C0FEB45231CEDF5005DC1DF /* UIView+AZGradient.m in Sources */,
 				3C0FEC22231CEDF6005DC1DF /* PGDatePicker+DateAndTime.m in Sources */,
+				3CA9A52F23385376003EC10D /* XWCameraViewController.m in Sources */,
 				3C0FEC24231CEDF6005DC1DF /* PGDatePicker+MonthDay.m in Sources */,
 				3C0FEBEC231CEDF6005DC1DF /* FSPageContentView.m in Sources */,
 				3C0FEC37231CEDF6005DC1DF /* JSONModelClassProperty.m in Sources */,
