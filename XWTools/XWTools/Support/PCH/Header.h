@@ -70,6 +70,12 @@
 #define CXWHistroyCity   @"CXWHistroyCity"
 
 
+// 6
+#define kQL_Width6 375.0
+#define kQL_Height6 667.0
+
+#define XM_XX_8(value)     (1.0 * (value) * (MIN(kXM_ScreenWidth1,kXM_ScreenHeight)) / kQL_Width6)
+
 
 #pragma mark ---屏幕尺寸
 // 屏幕尺寸
@@ -126,6 +132,11 @@
 || ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0) \
 || ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
 
+
+
+
+// Weak Self.
+#define XMWeakSelf __weak typeof(self) weakSelf = self;
 
 
 #pragma mark 打印信息

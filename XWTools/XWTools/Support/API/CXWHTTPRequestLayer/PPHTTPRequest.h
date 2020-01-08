@@ -32,4 +32,7 @@ typedef void (^CXWRequestComplete)(CXWNetPublicModel *NetModel);
 
 #pragma mark  ======系统信息======
 
+
++ (void)startNetwork:(CXWRequestComplete )complete;
+
 @end

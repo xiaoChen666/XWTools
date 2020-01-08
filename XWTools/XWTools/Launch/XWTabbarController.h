@@ -10,4 +10,6 @@
 
 @interface XWTabbarController : UITabBarController
 
+- (instancetype)initWithCustomTitle:(NSString *)customTitle;
+
 @end

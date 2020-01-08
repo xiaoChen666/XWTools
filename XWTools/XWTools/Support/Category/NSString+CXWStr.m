@@ -172,5 +172,29 @@
 }
 
 
+- (NSArray *)getAllRangeOfString:(NSString *)searchString {
+    if (self.length <= 0 || !searchString || searchString.length <= 0) {
+        return nil;
+    }
+    NSMutableArray * arr = [NSMutableArray array];
+    NSString * newStr = [self copy];
+    NSRange range = [newStr rangeOfString:searchString options:NSCaseInsensitiveSearch];
+//    NSRange range = [newStr rangeOfString:searchString ];
+    [arr addObject:[NSValue valueWithRange:range]];
+    while (range.location != NSNotFound) {
+        NSInteger start = range.location + range.length;
+        if (start >= self.length) {
+            break;
+        }
+        newStr = [self substringFromIndex:start];
+        range = [newStr rangeOfString:searchString];
+        range.location += start;
+        [arr addObject:[NSValue valueWithRange:range]];
+        
+    }
+    return arr;
+}
+
+
 
 @end

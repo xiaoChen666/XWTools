@@ -11,6 +11,8 @@
 #import <CommonCrypto/CommonCryptor.h>
 #import "GTMBase64.h"
 #import "NSString+URL.h"
+#import <iconv.h>
+
 //static NSString *const PSW_AES_KEY = @"TESTPASSWORD";
 //static NSString *const AES_IV_PARAMETER = @"AES00IVPARAMETER";
 
@@ -21,32 +23,55 @@ static NSString *const AES_IV_PARAMETER =  nil;
 @implementation NSString (AES)
 
 
-- (NSString*)aci_encryptWithAES {
+- (NSString*)aci_encryptWithAESWithKey:(NSString *)key {
     
-    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
-    
-    
+    char keyPtr[kCCKeySizeAES256 + 1];
+    bzero(keyPtr, sizeof(keyPtr));
+    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+
+    NSData *sourceData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSUInteger dataLength = [sourceData length];
+    size_t buffersize = dataLength + kCCBlockSizeAES128;
+    void *buffer = malloc(buffersize);
+    size_t numBytesEncrypted = 0;
+    CCCryptorStatus cryptStatus = CCCrypt(kCCEncrypt, kCCAlgorithmAES128, kCCOptionPKCS7Padding | kCCOptionECBMode, keyPtr, kCCBlockSizeAES128, NULL, [sourceData bytes], dataLength, buffer, buffersize, &numBytesEncrypted);
+
+    if (cryptStatus == kCCSuccess) {
+        NSData *encryptData = [NSData dataWithBytesNoCopy:buffer length:numBytesEncrypted];
 
     
-
-    NSData *AESData = [self AES128operation:kCCEncrypt
-                                       data:data
-                                        key:PSW_AES_KEY
-                                         iv:AES_IV_PARAMETER];
-    NSString *baseStr_GTM = [self encodeBase64Data:AESData];
+        NSString *newResult= [self hexStringWithData:encryptData];;
+        
+        return newResult;
+        //对加密后的二进制数据进行base64转码
+//        return [self encodeBase64Data:encryptData] ;
+    }
+    else
+    {
+        free(buffer);
+        return nil;
+    }
     
-    
-    baseStr_GTM = [baseStr_GTM URLEncodedString];
-    
-    
-//    NSString *baseStr = [AESData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
-
-    
-//    CXWLog(@"*****************\nGTMBase:%@\n*****************", baseStr_GTM);
-//    CXWLog(@"*****************\niOSCode:%@\n*****************", baseStr);
-    return baseStr_GTM;
 }
+
+-(NSString *)hexStringWithData:(NSData *)data
+{
+    const unsigned char* dataBuffer = (const unsigned char*)[data bytes];
+    if(!dataBuffer){
+        return nil;
+    }
+    NSUInteger dataLength = [data length];
+    NSMutableString* hexString = [NSMutableString stringWithCapacity:(dataLength * 2)];
+    for(int i = 0; i < dataLength; i++){
+        [hexString appendString:[NSString stringWithFormat:@"%02lx", (unsigned long)dataBuffer[i]]];
+    }
+    NSString* result = [NSString stringWithString:hexString];
+    return result;
+    
+}
+
+
+
 
 - (NSString*)aci_decryptWithAES {
     
@@ -93,7 +118,7 @@ static NSString *const AES_IV_PARAMETER =  nil;
     
     NSData *NewData = [key dataUsingEncoding:NSUTF8StringEncoding];
     
-   NewData =  [GTMBase64 decodeData:NewData];
+//   NewData =  [GTMBase64 decodeData:NewData];
     
 //    key = [NewData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
    
@@ -105,11 +130,18 @@ static NSString *const AES_IV_PARAMETER =  nil;
     
 //    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
     
+    
+    //    char keyPtr[kCCKeySizeAES256 + 1];
+    //    bzero(keyPtr, sizeof(keyPtr));
+    //    [key getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+    
+    
   char* keyPtr = [NewData bytes];
     
     
     // IV
-    char ivPtr[kCCBlockSizeAES128 + 1];
+//    char ivPtr[kCCBlockSizeAES128 + 1];
+     char ivPtr[kCCKeySizeAES256 + 1];
     bzero(ivPtr, sizeof(ivPtr));
     [iv getCString:ivPtr maxLength:sizeof(ivPtr) encoding:NSUTF8StringEncoding];
     

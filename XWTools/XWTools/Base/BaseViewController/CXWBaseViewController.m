@@ -10,6 +10,7 @@
 #import "XWLoginBaseViewController.h"
 #import "XWWelcomeViewController.h"
 #import "TOCropViewController.h"
+#import "XWTestHomeViewController.h"
 
 @interface CXWBaseViewController ()<UINavigationControllerDelegate>
 
@@ -37,7 +38,8 @@
     ///需要隐藏导航栏的控制器    XWWelcomeViewController TOCropViewController XWFillMessageViewController
     if (([viewController isKindOfClass: [XWWelcomeViewController class]])||
         ([viewController isKindOfClass: [TOCropViewController class]])||
-        ([viewController isKindOfClass: [XWLoginBaseViewController class]])
+        ([viewController isKindOfClass: [XWLoginBaseViewController class]])||
+        ([viewController isKindOfClass: [XWTestHomeViewController class]])
         ) {
         needHideNaivgaionBar = YES;
     }

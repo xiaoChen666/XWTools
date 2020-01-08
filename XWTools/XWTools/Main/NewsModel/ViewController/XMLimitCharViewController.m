@@ -8,8 +8,10 @@
 
 #import "XMLimitCharViewController.h"
 #import "NSString+CXWStr.h"
-@interface XMLimitCharViewController ()<UITextViewDelegate,UITextFieldDelegate>
 
+#import "CCPScrollView.h"
+@interface XMLimitCharViewController ()<UITextViewDelegate,UITextFieldDelegate>
+@property (nonatomic, strong) CCPScrollView *textLabel;
 @end
 
 @implementation XMLimitCharViewController
@@ -27,6 +29,7 @@
     UITextField *myTextField = [[UITextField alloc] initWithFrame:CGRectMake(50, 200, 250, 40)];
     myTextField.backgroundColor = [UIColor colorWithHexString:@"#f5f5f5"];
     myTextField.placeholder = @"哈哈";
+    myTextField.returnKeyType = UIReturnKeySearch;
     myTextField.font = [UIFont systemFontOfSize:13];
     myTextField.delegate = self;
     
@@ -51,8 +54,34 @@
     
     textVIew.delegate = self;
     
+    
+    CCPScrollView *lable = [[CCPScrollView alloc] init];
+    lable.titleColor = [UIColor redColor];
+    self.textLabel = lable;
+    lable.backgroundColor = [UIColor yellowColor];
+    
+    [self.view addSubview:lable];
+    
+    [lable mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view).with.offset(-50);
+        make.top.equalTo(self.view).with.offset(100);
+        make.height.mas_equalTo(50);
+    }];
+    
+    
+    
     // Do any additional setup after loading the view.
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    self.textLabel.titleArray = @[@"1",@"2",@"3"];
+    
+    self.textLabel.titleColor = RandomColor;
+}
+
+
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     

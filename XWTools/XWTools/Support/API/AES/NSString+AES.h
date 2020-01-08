@@ -11,7 +11,7 @@
 @interface NSString (AES)
 
 /**< 加密方法 */
-- (NSString*)aci_encryptWithAES;
+- (NSString*)aci_encryptWithAESWithKey:(NSString *)key;
 
 /**< 解密方法 */
 - (NSString*)aci_decryptWithAES;

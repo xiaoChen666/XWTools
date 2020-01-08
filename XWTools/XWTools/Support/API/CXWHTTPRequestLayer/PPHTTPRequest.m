@@ -49,4 +49,12 @@
     }
 }
 
++ (void)startNetwork:(CXWRequestComplete )complete {
+    [PPNetworkHelper GET:@"http://www.baidu.com" parameters:nil success:^(id responseObject) {
+        complete([CXWNetPublicModel new]);
+    } failure:^(NSError *error) {
+        complete([CXWNetPublicModel new]);
+    }];
+}
+
 @end

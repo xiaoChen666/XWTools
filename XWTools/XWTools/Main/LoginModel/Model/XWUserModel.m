@@ -19,4 +19,12 @@
     }
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.BirthDay = @"";
+    }
+    return self;
+}
+
+
 @end

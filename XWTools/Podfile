@@ -1,10 +1,14 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-pod 'SDWebImage',  '~> 5.0.0'
-pod 'MJRefresh',  '~> 3.1.15.7'
-pod 'Masonry',  '~> 1.1.0'
-pod 'YYKit'
+  pod 'SDWebImage',  '~> 5.0.0'
+  pod 'MJRefresh',  '~> 3.1.15.7'
+  pod 'Masonry',  '~> 1.1.0'
+  pod 'YYKit'
+  pod 'JSONModel'
+  pod 'SVProgressHUD'
+  pod 'AFNetworking'
+  pod 'GPUImage'
 
   # 集成微信(精简版0.2M)
   pod 'UMCShare/Social/ReducedWeChat'
@@ -16,7 +20,9 @@ pod 'YYKit'
   pod 'UMCCommon'
   pod 'UMCAnalytics'
 
- pod 'UMCShare/UI'
+  pod 'UMCShare/UI'
+
+  pod 'ijkplayerFramework','~> 1.2.0'
 
 target 'XWTools' do
   # Comment the next line if you don't want to use dynamic frameworks

@@ -123,6 +123,17 @@ static AFHTTPSessionManager *_sessionManager;
         return nil ;
     }
     [self CXWSetPulicHead];
+    
+    
+    
+    NSString *userAgent = [NSString stringWithFormat:@"%@/%@ (%@; iOS %@; Scale/%0.2f)",@"qiuhuiapp", [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey], [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], [[UIScreen mainScreen] scale]];
+    NSDictionary *dict = @{@"Content-Type": @"application/json",@"Authorization":@"Basic YXBwOmFwcA==",@"User-Agent":userAgent};
+    
+    [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [PPNetworkHelper setValue:obj forHTTPHeaderField:key];
+    }];
+    
+    
     NSURLSessionTask *sessionTask = [_sessionManager GET:URL parameters:parameters progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -365,10 +376,10 @@ static AFHTTPSessionManager *_sessionManager;
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     
-    if (!kStringIsEmpty([XWUserManager shareManager].userModel.AccessToken)) {
-        NSString *tokenvalue = [NSString stringWithFormat:@"BasicAuth %@",[XWUserManager shareManager].userModel.AccessToken];
-        [self setValue:tokenvalue forHTTPHeaderField:@"Authorization"];
-    }
+//    if (!kStringIsEmpty([XWUserManager shareManager].userModel.AccessToken)) {
+//        NSString *tokenvalue = [NSString stringWithFormat:@"BasicAuth %@",[XWUserManager shareManager].userModel.AccessToken];
+//        [self setValue:tokenvalue forHTTPHeaderField:@"Authorization"];
+//    }
 
     [self setRequestSerializer:PPRequestSerializerJSON];
 }

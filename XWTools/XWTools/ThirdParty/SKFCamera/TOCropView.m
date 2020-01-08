@@ -236,7 +236,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     frame.size = scaledSize;
 
     //陈叙文修改
-    CGFloat StartX = 0;
+    CGFloat StartX = 37;
     CGFloat  CXWWidth = KAPPWidth - 2*StartX;
     CGFloat  CXWHeight = KAPPWidth - 2*StartX;
     
@@ -729,7 +729,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     
     
     //陈叙文修改
-    CGFloat  StartX = 0;
+    CGFloat  StartX = 37;
     CGFloat  CXWWidth = KAPPWidth - 2*StartX;
     CGFloat  CXWHeight = KAPPWidth - 2*StartX;
     

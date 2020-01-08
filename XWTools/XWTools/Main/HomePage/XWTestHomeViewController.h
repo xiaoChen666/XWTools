@@ -7,8 +7,11 @@
 //
 
 #import "CXWBaseViewController.h"
+#import "WMPageController.h"
+static CGFloat const kWMHeaderViewHeight = 200;
+//static CGFloat const kNavigationBarHeight = 64;
+static CGFloat const kNavigationBarHeight = 88;
+@interface XWTestHomeViewController : WMPageController
 
-@interface XWTestHomeViewController : CXWBaseViewController
-
-
+@property (nonatomic, assign) CGFloat viewTop;
 @end

@@ -36,4 +36,8 @@
 
 //编码:
 +(NSString *)encodeString:(NSString *)string ;
+
+
+- (NSArray *)getAllRangeOfString:(NSString *)searchString;
+
 @end

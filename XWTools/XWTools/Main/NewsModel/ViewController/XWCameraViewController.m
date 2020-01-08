@@ -8,25 +8,145 @@
 
 #import "XWCameraViewController.h"
 
-@interface XWCameraViewController ()
+#import "GPUImage.h"
+#import "GPUImageBeautifyFilter.h"
+#import <Photos/Photos.h>
 
+#import "XWPhotoCollectionViewCell.h"
+
+
+@interface XWCameraViewController ()
+@property(strong,nonatomic)GPUImageStillCamera *myCamera;
+@property(strong,nonatomic)GPUImageView *myGPUImageView;
+@property(strong,nonatomic)GPUImageFilter *myFilter;
+
+
+@property (nonatomic, strong) UIButton *cameraBtn;
+@property (nonatomic, strong) UIButton *switchBtn;
+
+@property (nonatomic, strong) UICollectionView *collectView;
+@property (nonatomic, strong) NSMutableArray *muArr;
 @end
 
 @implementation XWCameraViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initUI];
     // Do any additional setup after loading the view.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark Event
+- (void)switchIsChanged:(UIButton *)sender {
+    [self.myCamera rotateCamera];
 }
-*/
+
+
+
+//开始拍照
+- (void)capturePhoto:(UIButton *)sender {
+    //定格一张图片 保存到相册
+    [self.myCamera capturePhotoAsPNGProcessedUpToFilter:self.myFilter withCompletionHandler:^(NSData *processedPNG, NSError *error) {
+        
+        //拿到相册，需要引入Photo Kit
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            //写入图片到相册
+            PHAssetChangeRequest *req = [PHAssetChangeRequest creationRequestForAssetFromImage:[UIImage imageWithData:processedPNG]];
+            
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+            
+            NSLog(@"success = %d, error = %@", success, error);
+            
+        }];
+        
+    }];
+}
+
+
+#pragma mark CollectViewDataSourceDelegate
+
+
+
+
+#pragma mark UI
+
+- (void)initUI {
+    
+    self.myCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionFront];
+    
+    //竖屏方向
+    self.myCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+    
+    
+    //初始化GPUImageView
+    self.myGPUImageView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    
+    
+    //美颜
+    GPUImageBeautifyFilter *beautyFielter = [[GPUImageBeautifyFilter alloc] init];
+    
+    //初始设置为哈哈镜效果
+    [self.myCamera addTarget:beautyFielter];
+    [beautyFielter addTarget:self.myGPUImageView];
+    
+    self.myFilter = beautyFielter;
+    
+    [self.view addSubview:self.myGPUImageView];
+    [self.myCamera startCameraCapture];
+    
+    
+
+    [self.view addSubview:self.switchBtn];
+    
+    [self.view addSubview:self.cameraBtn];
+    
+    
+    [self.switchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(44, 35));
+        make.top.equalTo(self.view).with.offset(30);
+        make.right.equalTo(self.view).with.offset(-60);
+    }];
+    
+    [self.cameraBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(60, 60));
+        make.bottom.equalTo(self.view).with.offset(-80);
+        make.centerX.equalTo(self.view);
+    }];
+    
+}
+
+
+#pragma mark lazy
+- (UIButton *)switchBtn {
+    if (!_switchBtn) {
+        UIButton *switchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        //设置2s内不可以连续点击,防止用户连续点击
+
+        [switchBtn setImage:[UIImage imageNamed:@"switch.png"] forState:UIControlStateNormal];
+        [switchBtn addTarget:self action:@selector(switchIsChanged:) forControlEvents:UIControlEventTouchUpInside];
+        switchBtn.backgroundColor = [UIColor redColor];
+        _switchBtn = switchBtn;
+    }
+    return _switchBtn;
+}
+
+- (UIButton *)cameraBtn {
+    if (!_cameraBtn) {
+        _cameraBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_cameraBtn addTarget:self action:@selector(capturePhoto:) forControlEvents:UIControlEventTouchUpInside];
+        _cameraBtn.backgroundColor = [UIColor redColor];
+        [_cameraBtn setBackgroundImage:[UIImage imageNamed:@"photo.png"] forState:UIControlStateNormal];
+    }
+    return _cameraBtn;
+}
+
+- (NSMutableArray *)muArr {
+    if (!_muArr) {
+        _muArr = [NSMutableArray array];
+    }
+    return _muArr;
+}
 
 @end
