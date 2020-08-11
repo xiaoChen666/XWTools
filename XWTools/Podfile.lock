@@ -60,7 +60,7 @@ DEPENDENCIES:
   - YYKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - GPUImage
     - JSONModel
@@ -86,6 +86,6 @@ SPEC CHECKSUMS:
   UMCShare: e0cef55c0fd6051254c8cda1d0630eb578b27bad
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 52b36a85b5414d0fd99861437868e74840f2824a
+PODFILE CHECKSUM: 31b0e6caf7a0a8d2965bbf7293dbbb9d4444dc6a
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.1

@@ -24,6 +24,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     
+
     if ([[CXWDataManager shareManager] isFirstLaunch]) {
 //        self.window.rootViewController = [[XWWelcomeViewController alloc] init];
         XWTabbarController *tab =  [[XWTabbarController alloc] init];

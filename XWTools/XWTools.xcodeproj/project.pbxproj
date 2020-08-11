@@ -15,7 +15,6 @@
 		3C0EEAE82384E68E0077A921 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EEAE12384E68E0077A921 /* CJSONDeserializer.m */; };
 		3C0EEAE92384E68E0077A921 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EEAE22384E68E0077A921 /* NSDictionary_JSONExtensions.m */; };
 		3C0EEAEA2384E68E0077A921 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EEAE72384E68E0077A921 /* CJSONSerializer.m */; };
-		3C0EEAF12385099A0077A921 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EEAF02385099A0077A921 /* Event.m */; };
 		3C0EF68E233C4BDF00E22155 /* XWTestOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EF68D233C4BDF00E22155 /* XWTestOneViewController.m */; };
 		3C0EF691233C4BF000E22155 /* XMTestTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0EF690233C4BF000E22155 /* XMTestTwoViewController.m */; };
 		3C0FEADA231CEDF5005DC1DF /* XWMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0FE77D231CEDF4005DC1DF /* XWMeHomeViewController.m */; };
@@ -205,6 +204,7 @@
 		3C20B32823405CAB007B11EE /* WMPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C20B32623405CAB007B11EE /* WMPanGestureRecognizer.m */; };
 		3C20B32B23405DBF007B11EE /* WMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C20B32A23405DBE007B11EE /* WMTableViewController.m */; };
 		3C3C945E237D404000FA7A0C /* XWPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C945D237D404000FA7A0C /* XWPhotoViewController.m */; };
+		3C41CCDE24C83FAD00C47FDD /* XMPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C41CCDD24C83FAD00C47FDD /* XMPerson.m */; };
 		3C4312AA236B024F00A8EB81 /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4312A0236B024F00A8EB81 /* NSString+Base64.m */; };
 		3C4312AB236B024F00A8EB81 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3C4312A1236B024F00A8EB81 /* LICENSE */; };
 		3C4312AC236B024F00A8EB81 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4312A2236B024F00A8EB81 /* AESCrypt.m */; };
@@ -265,8 +265,6 @@
 		3C0EEAE52384E68E0077A921 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
 		3C0EEAE62384E68E0077A921 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
 		3C0EEAE72384E68E0077A921 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
-		3C0EEAEF2385099A0077A921 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		3C0EEAF02385099A0077A921 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		3C0EF68C233C4BDF00E22155 /* XWTestOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWTestOneViewController.h; sourceTree = "<group>"; };
 		3C0EF68D233C4BDF00E22155 /* XWTestOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWTestOneViewController.m; sourceTree = "<group>"; };
 		3C0EF68F233C4BF000E22155 /* XMTestTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMTestTwoViewController.h; sourceTree = "<group>"; };
@@ -634,6 +632,8 @@
 		3C20B32A23405DBE007B11EE /* WMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMTableViewController.m; sourceTree = "<group>"; };
 		3C3C945C237D404000FA7A0C /* XWPhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWPhotoViewController.h; sourceTree = "<group>"; };
 		3C3C945D237D404000FA7A0C /* XWPhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWPhotoViewController.m; sourceTree = "<group>"; };
+		3C41CCDC24C83FAD00C47FDD /* XMPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPerson.h; sourceTree = "<group>"; };
+		3C41CCDD24C83FAD00C47FDD /* XMPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMPerson.m; sourceTree = "<group>"; };
 		3C4312A0236B024F00A8EB81 /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		3C4312A1236B024F00A8EB81 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3C4312A2236B024F00A8EB81 /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
@@ -858,12 +858,12 @@
 		3C0FE77B231CEDF4005DC1DF /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				3C0EEAE02384E68E0077A921 /* touchjson */,
 				3C487B4E237A93C90090CE80 /* Model */,
+				3C0EEAE02384E68E0077A921 /* touchjson */,
+				3C0FE77D231CEDF4005DC1DF /* XWMeHomeViewController.m */,
+				3C0FE781231CEDF4005DC1DF /* XWMeHomeViewController.h */,
 				3C0FE77C231CEDF4005DC1DF /* XWNewsHomeViewController.h */,
 				3C0FE77F231CEDF4005DC1DF /* XWNewsHomeViewController.m */,
-				3C0FE781231CEDF4005DC1DF /* XWMeHomeViewController.h */,
-				3C0FE77D231CEDF4005DC1DF /* XWMeHomeViewController.m */,
 				3C0FE780231CEDF4005DC1DF /* XWTestHomeViewController.h */,
 				3C0FE77E231CEDF4005DC1DF /* XWTestHomeViewController.m */,
 			);
@@ -920,7 +920,7 @@
 		3C0FE801231CEDF4005DC1DF /* NewsModel */ = {
 			isa = PBXGroup;
 			children = (
-				3CF0981C233AF12100DDE089 /* Model */,
+				3CDF49C824E29CEB009D5ED2 /* Model */,
 				3CF0981B233AF11B00DDE089 /* Cell */,
 				3CF0981A233AF11400DDE089 /* View */,
 				3C0FEC5E231CF7C6005DC1DF /* ViewController */,
@@ -1649,8 +1649,8 @@
 		3C487B4E237A93C90090CE80 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3C0EEAEF2385099A0077A921 /* Event.h */,
-				3C0EEAF02385099A0077A921 /* Event.m */,
+				3C41CCDC24C83FAD00C47FDD /* XMPerson.h */,
+				3C41CCDD24C83FAD00C47FDD /* XMPerson.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1662,6 +1662,13 @@
 				3CB0ECD62367E9B700B84792 /* CCPScrollView.m */,
 			);
 			path = CCPScrollView;
+			sourceTree = "<group>";
+		};
+		3CDF49C824E29CEB009D5ED2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3CF0981A233AF11400DDE089 /* View */ = {
@@ -1682,13 +1689,6 @@
 				3CF0981E233AF14500DDE089 /* XWPhotoCollectionViewCell.m */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		3CF0981C233AF12100DDE089 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FAC2F4486495DE4E602EDE77 /* Frameworks */ = {
@@ -1959,6 +1959,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C41CCDE24C83FAD00C47FDD /* XMPerson.m in Sources */,
 				3C0FEB34231CEDF5005DC1DF /* UIColor+CHEXString.m in Sources */,
 				3C0FEB59231CEDF5005DC1DF /* GTMBase64.m in Sources */,
 				3C0FEC14231CEDF6005DC1DF /* PGDatePicker+MonthDayHour.m in Sources */,
@@ -1971,7 +1972,6 @@
 				3C20B32B23405DBF007B11EE /* WMTableViewController.m in Sources */,
 				3C0FEC15231CEDF6005DC1DF /* PGDatePicker+YearAndMonth.m in Sources */,
 				3C0FEB56231CEDF5005DC1DF /* PPNetworkCache.m in Sources */,
-				3C0EEAF12385099A0077A921 /* Event.m in Sources */,
 				3C0FEC13231CEDF6005DC1DF /* PGDatePickerView.m in Sources */,
 				3C0FEC4B231CEDF6005DC1DF /* CXWNOKeyBoardManagerViewController.m in Sources */,
 				3C0FEC1B231CEDF6005DC1DF /* PGDatePicker+MonthDayHourMinute.m in Sources */,
@@ -2298,6 +2298,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RJKJ2LAS3B;
@@ -2338,6 +2339,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RJKJ2LAS3B;

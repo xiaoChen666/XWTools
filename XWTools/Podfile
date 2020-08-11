@@ -22,7 +22,6 @@
 
   pod 'UMCShare/UI'
 
-  pod 'ijkplayerFramework','~> 1.2.0'
 
 target 'XWTools' do
   # Comment the next line if you don't want to use dynamic frameworks

@@ -9,16 +9,19 @@
 #import "XWCameraViewController.h"
 
 #import "GPUImage.h"
-#import "GPUImageBeautifyFilter.h"
+
 #import <Photos/Photos.h>
 
 #import "XWPhotoCollectionViewCell.h"
 
+#import "GPUImageGrayscaleFilter.h"
+#import "GPUImageBeautifyFilter.h"
 
-@interface XWCameraViewController ()
-@property(strong,nonatomic)GPUImageStillCamera *myCamera;
-@property(strong,nonatomic)GPUImageView *myGPUImageView;
-@property(strong,nonatomic)GPUImageFilter *myFilter;
+
+@interface XWCameraViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@property(strong,nonatomic) GPUImageStillCamera *myCamera;
+@property(strong,nonatomic) GPUImageView *myGPUImageView;
+@property(strong,nonatomic) GPUImageFilter *myFilter;
 
 
 @property (nonatomic, strong) UIButton *cameraBtn;
@@ -26,6 +29,7 @@
 
 @property (nonatomic, strong) UICollectionView *collectView;
 @property (nonatomic, strong) NSMutableArray *muArr;
+
 @end
 
 @implementation XWCameraViewController
@@ -66,7 +70,16 @@
 
 
 #pragma mark CollectViewDataSourceDelegate
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.muArr.count;
+}
 
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    XWPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"XWPhotoCollectionViewCell" forIndexPath:indexPath];
+    
+    return cell;
+}
 
 
 
@@ -74,6 +87,31 @@
 
 - (void)initUI {
     
+    [self init_set];
+    
+    [self.view addSubview:self.myGPUImageView];
+
+    [self.view addSubview:self.switchBtn];
+    [self.view addSubview:self.cameraBtn];
+    
+    
+     [self.myCamera startCameraCapture];
+    
+    [self.switchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(44, 35));
+        make.top.equalTo(self.view).with.offset(30);
+        make.right.equalTo(self.view).with.offset(-60);
+    }];
+    
+    [self.cameraBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(60, 60));
+        make.bottom.equalTo(self.view).with.offset(-80);
+        make.centerX.equalTo(self.view);
+    }];
+    
+}
+
+- (void)init_set {
     self.myCamera = [[GPUImageStillCamera alloc] initWithSessionPreset:AVCaptureSessionPreset1280x720 cameraPosition:AVCaptureDevicePositionFront];
     
     //竖屏方向
@@ -89,33 +127,13 @@
     
     //初始设置为哈哈镜效果
     [self.myCamera addTarget:beautyFielter];
+
     [beautyFielter addTarget:self.myGPUImageView];
     
     self.myFilter = beautyFielter;
     
-    [self.view addSubview:self.myGPUImageView];
-    [self.myCamera startCameraCapture];
-    
-    
-
-    [self.view addSubview:self.switchBtn];
-    
-    [self.view addSubview:self.cameraBtn];
-    
-    
-    [self.switchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(44, 35));
-        make.top.equalTo(self.view).with.offset(30);
-        make.right.equalTo(self.view).with.offset(-60);
-    }];
-    
-    [self.cameraBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(60, 60));
-        make.bottom.equalTo(self.view).with.offset(-80);
-        make.centerX.equalTo(self.view);
-    }];
-    
 }
+
 
 
 #pragma mark lazy
@@ -147,6 +165,20 @@
         _muArr = [NSMutableArray array];
     }
     return _muArr;
+}
+
+- (UICollectionView *)collectView {
+    if (!_collectView) {
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.itemSize = CGSizeMake(30,30);
+        
+        UICollectionView *collectView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        collectView.dataSource = self;
+        collectView.delegate = self;
+        [collectView registerClass:[XWPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"XWPhotoCollectionViewCell"];
+        _collectView = collectView;
+    }
+    return _collectView;
 }
 
 @end
