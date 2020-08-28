@@ -25,7 +25,7 @@
 #import "XMPerson.h"
 #import <objc/runtime.h>
 #import "XMPerson.h"
-
+#import "UIView+AZGradient.h"
 
 @interface XWNewsHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -47,10 +47,24 @@
     [super viewDidLoad];
 
     [self init_UI];
+    
+   
+    NSLog(@"----%p---%p---%p",@selector(test),@selector(test),sel_registerName(@"test"));
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
+    [self.view addSubview:label];
+    
+    UIColor *startColor = [UIColor redColor];
+    UIColor *endColor = [UIColor blackColor];
+    
+    [label az_setGradientBackgroundWithColors:@[startColor,endColor] locations:nil startPoint:CGPointMake(0, 0.5) endPoint:CGPointMake(1.0, 0.5)];
+    
 }
 
 
-
+- (void)test {
+    
+}
 
 
 - (void)viewWillAppear:(BOOL)animated {

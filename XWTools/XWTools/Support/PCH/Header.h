@@ -166,4 +166,20 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 
 
+
+NS_INLINE void RunOnMainQueue(dispatch_block_t x){
+    if ([NSThread isMainThread]){ if (x)x(); }else dispatch_async(dispatch_get_main_queue(),x);
+}
+
+// 在通用子线程执行block
+NS_INLINE void RunOnGlobalQueue(dispatch_block_t x){
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), x);
+}
+
+// 在主线程延迟若干秒执行block
+NS_INLINE void RunAfter(NSTimeInterval time,dispatch_block_t x){
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((time) * NSEC_PER_SEC)), dispatch_get_main_queue(), x);
+}
+
+
 #endif /* Header_h */

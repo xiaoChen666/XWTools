@@ -13,15 +13,18 @@
 #import <Photos/Photos.h>
 
 #import "XWPhotoCollectionViewCell.h"
+#import "XMFilerModel.h"
+
 
 #import "GPUImageGrayscaleFilter.h"
 #import "GPUImageBeautifyFilter.h"
+#import "XMGrayFilter.h"
 
 
 @interface XWCameraViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 @property(strong,nonatomic) GPUImageStillCamera *myCamera;
 @property(strong,nonatomic) GPUImageView *myGPUImageView;
-@property(strong,nonatomic) GPUImageFilter *myFilter;
+@property(strong,nonatomic) GPUImageOutput *myFilter;
 
 
 @property (nonatomic, strong) UIButton *cameraBtn;
@@ -37,7 +40,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+   
     [self initUI];
+    [self init_data];
+  
+
     // Do any additional setup after loading the view.
 }
 
@@ -77,25 +84,41 @@
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     XWPhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"XWPhotoCollectionViewCell" forIndexPath:indexPath];
-    
+    cell.currentModel = self.muArr[indexPath.row];
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    XMFilerModel *model = self.muArr[indexPath.row];
+    
+    [self.myCamera removeTarget:self.myFilter];
+    [self.myFilter removeTarget:self.myGPUImageView];
+    
+    GPUImageFilter *filter = model.currentFiler;
+    
+    [self.myCamera addTarget:filter];
+    [filter addTarget:self.myGPUImageView];
+    
+    self.myFilter = filter;
+    
+
+}
 
 
 #pragma mark UI
 
 - (void)initUI {
     
-    [self init_set];
+  [self init_set];
     
     [self.view addSubview:self.myGPUImageView];
 
     [self.view addSubview:self.switchBtn];
     [self.view addSubview:self.cameraBtn];
+    [self.view addSubview:self.collectView];
     
     
-     [self.myCamera startCameraCapture];
+ 
     
     [self.switchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(44, 35));
@@ -109,6 +132,12 @@
         make.centerX.equalTo(self.view);
     }];
     
+    [self.collectView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(40, 200));
+        make.left.equalTo(self.view).with.offset(10);
+        make.centerY.equalTo(self.view);
+    }];
+    
 }
 
 - (void)init_set {
@@ -117,21 +146,58 @@
     //竖屏方向
     self.myCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
     
-    
-    //初始化GPUImageView
-    self.myGPUImageView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
-    
-    
-    //美颜
-    GPUImageBeautifyFilter *beautyFielter = [[GPUImageBeautifyFilter alloc] init];
-    
-    //初始设置为哈哈镜效果
-    [self.myCamera addTarget:beautyFielter];
 
-    [beautyFielter addTarget:self.myGPUImageView];
+
+           //初始化GPUImageView
+    self.myGPUImageView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+
+    GPUImageBeautifyFilter *beautyFielter = [[GPUImageBeautifyFilter alloc] init];
+//
+//        //初始设置为哈哈镜效果
+    [self.myCamera addTarget:beautyFielter];
+//
     
+    [beautyFielter addTarget:self.myGPUImageView];
+        //
     self.myFilter = beautyFielter;
     
+    RunAfter(0.01, ^{
+        [self.myCamera startCameraCapture];
+    });
+    
+}
+
+- (void)init_data {
+   
+    
+    XMFilerModel *beatyModel = [[XMFilerModel alloc] init];
+    GPUImageBeautifyFilter *beautyFielter = [[GPUImageBeautifyFilter alloc] init];
+    beatyModel.currentFiler = beautyFielter;
+    beatyModel.filerTitle = @"美颜";
+    
+    XMFilerModel *GrayModel = [[XMFilerModel alloc] init];
+    GPUImageGrayscaleFilter *GrayFielter = [[GPUImageGrayscaleFilter alloc] init];
+    GrayModel.currentFiler = GrayFielter;
+    GrayModel.filerTitle = @"灰度";
+    
+    XMFilerModel *XMGrayModel = [[XMFilerModel alloc] init];
+    XMGrayFilter *XMGrayFielter = [[XMGrayFilter alloc] init];
+    XMGrayModel.currentFiler = XMGrayFielter;
+    XMGrayModel.filerTitle = @"灰度2";
+    
+    
+    XMFilerModel *SketchModel = [[XMFilerModel alloc] init];
+    GPUImageSketchFilter *SketchFielter = [[GPUImageSketchFilter alloc] init];
+    SketchModel.currentFiler = SketchFielter;
+    SketchModel.filerTitle = @"素描";
+    
+
+    
+    
+    
+    [self.muArr addObjectsFromArray:@[beatyModel,GrayModel,XMGrayModel,SketchModel]];
+    
+    [self.collectView reloadData];
 }
 
 
@@ -170,12 +236,13 @@
 - (UICollectionView *)collectView {
     if (!_collectView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.itemSize = CGSizeMake(30,30);
+        layout.itemSize = CGSizeMake(40,40);
         
         UICollectionView *collectView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         collectView.dataSource = self;
         collectView.delegate = self;
         [collectView registerClass:[XWPhotoCollectionViewCell class] forCellWithReuseIdentifier:@"XWPhotoCollectionViewCell"];
+        collectView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.2];
         _collectView = collectView;
     }
     return _collectView;

@@ -37,9 +37,9 @@
     
 }
 
-- (void)setTitleName:(NSString *)titleName {
-    _titleName = titleName;
-    self.titleLabel.text = titleName;
+- (void)setCurrentModel:(XMFilerModel *)currentModel {
+    _currentModel = currentModel;
+    self.titleLabel.text = currentModel.filerTitle;
 }
 
 

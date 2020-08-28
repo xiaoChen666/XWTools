@@ -212,10 +212,14 @@
 		3C4312AE236B024F00A8EB81 /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4312A8236B024F00A8EB81 /* NSData+CommonCrypto.m */; };
 		3C4312AF236B024F00A8EB81 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4312A9236B024F00A8EB81 /* NSData+Base64.m */; };
 		3C4312B1236B0B0300A8EB81 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4312B0236B0AE000A8EB81 /* libiconv.tbd */; };
+		3C47328824F8D3F4006344A3 /* XMPermenantThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C47328624F8D3F4006344A3 /* XMPermenantThread.m */; };
 		3C5FC9DB2341E5FE0040B858 /* XWTextCodeVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5FC9DA2341E5FE0040B858 /* XWTextCodeVerifyViewController.m */; };
 		3C5FC9DE2341E64D0040B858 /* XWTextCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5FC9DD2341E64D0040B858 /* XWTextCodeView.m */; };
 		3CA9A52F23385376003EC10D /* XWCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA9A52E23385376003EC10D /* XWCameraViewController.m */; };
 		3CB0ECD72367E9B700B84792 /* CCPScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0ECD62367E9B700B84792 /* CCPScrollView.m */; };
+		3CDF49CB24E29D40009D5ED2 /* XMFilerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF49CA24E29D40009D5ED2 /* XMFilerModel.m */; };
+		3CDF49CE24E2BB86009D5ED2 /* XMGrayFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF49CD24E2BB86009D5ED2 /* XMGrayFilter.m */; };
+		3CDF49D124E2BC6F009D5ED2 /* XMBlackWriteFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF49D024E2BC6F009D5ED2 /* XMBlackWriteFilter.m */; };
 		3CF0981F233AF14500DDE089 /* XWPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CF0981E233AF14500DDE089 /* XWPhotoCollectionViewCell.m */; };
 		3CFDCBF1234D70C800F1015C /* XWOtherTextCodeVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDCBF0234D70C800F1015C /* XWOtherTextCodeVerifyViewController.m */; };
 		3CFDCBF4234D71A200F1015C /* XWImageVerifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFDCBF3234D71A200F1015C /* XWImageVerifyView.m */; };
@@ -645,6 +649,8 @@
 		3C4312A8236B024F00A8EB81 /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
 		3C4312A9236B024F00A8EB81 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		3C4312B0236B0AE000A8EB81 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		3C47328624F8D3F4006344A3 /* XMPermenantThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMPermenantThread.m; sourceTree = "<group>"; };
+		3C47328724F8D3F4006344A3 /* XMPermenantThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPermenantThread.h; sourceTree = "<group>"; };
 		3C5FC9D92341E5FE0040B858 /* XWTextCodeVerifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWTextCodeVerifyViewController.h; sourceTree = "<group>"; };
 		3C5FC9DA2341E5FE0040B858 /* XWTextCodeVerifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWTextCodeVerifyViewController.m; sourceTree = "<group>"; };
 		3C5FC9DC2341E64D0040B858 /* XWTextCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWTextCodeView.h; sourceTree = "<group>"; };
@@ -653,6 +659,12 @@
 		3CA9A52E23385376003EC10D /* XWCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWCameraViewController.m; sourceTree = "<group>"; };
 		3CB0ECD52367E9B700B84792 /* CCPScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPScrollView.h; sourceTree = "<group>"; };
 		3CB0ECD62367E9B700B84792 /* CCPScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCPScrollView.m; sourceTree = "<group>"; };
+		3CDF49C924E29D40009D5ED2 /* XMFilerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMFilerModel.h; sourceTree = "<group>"; };
+		3CDF49CA24E29D40009D5ED2 /* XMFilerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMFilerModel.m; sourceTree = "<group>"; };
+		3CDF49CC24E2BB86009D5ED2 /* XMGrayFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMGrayFilter.h; sourceTree = "<group>"; };
+		3CDF49CD24E2BB86009D5ED2 /* XMGrayFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMGrayFilter.m; sourceTree = "<group>"; };
+		3CDF49CF24E2BC6F009D5ED2 /* XMBlackWriteFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMBlackWriteFilter.h; sourceTree = "<group>"; };
+		3CDF49D024E2BC6F009D5ED2 /* XMBlackWriteFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XMBlackWriteFilter.m; sourceTree = "<group>"; };
 		3CF0981D233AF14500DDE089 /* XWPhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		3CF0981E233AF14500DDE089 /* XWPhotoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		3CFDCBEF234D70C800F1015C /* XWOtherTextCodeVerifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWOtherTextCodeVerifyViewController.h; sourceTree = "<group>"; };
@@ -787,6 +799,10 @@
 			children = (
 				3C03026F2339A097000910AE /* GPUImageBeautifyFilter.h */,
 				3C0302702339A097000910AE /* GPUImageBeautifyFilter.m */,
+				3CDF49CC24E2BB86009D5ED2 /* XMGrayFilter.h */,
+				3CDF49CD24E2BB86009D5ED2 /* XMGrayFilter.m */,
+				3CDF49CF24E2BC6F009D5ED2 /* XMBlackWriteFilter.h */,
+				3CDF49D024E2BC6F009D5ED2 /* XMBlackWriteFilter.m */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -1035,20 +1051,22 @@
 		3C0FE868231CEDF4005DC1DF /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
-				3C0FE869231CEDF4005DC1DF /* CXWLocationTools.m */,
-				3C0FE86A231CEDF4005DC1DF /* XWUserManager.h */,
-				3C0FE86B231CEDF4005DC1DF /* CXWCacheTool.h */,
-				3C0FE86C231CEDF4005DC1DF /* CXWDataManager.m */,
-				3C0FE86D231CEDF4005DC1DF /* CXWJumpTools.m */,
-				3C0FE86E231CEDF4005DC1DF /* CXWShareTool.h */,
 				3C0FE86F231CEDF4005DC1DF /* CXWAlertTools.h */,
-				3C0FE870231CEDF4005DC1DF /* XWUserManager.m */,
-				3C0FE871231CEDF4005DC1DF /* CXWLocationTools.h */,
-				3C0FE872231CEDF4005DC1DF /* CXWJumpTools.h */,
-				3C0FE873231CEDF4005DC1DF /* CXWShareTool.m */,
-				3C0FE874231CEDF4005DC1DF /* CXWDataManager.h */,
-				3C0FE875231CEDF4005DC1DF /* CXWCacheTool.m */,
 				3C0FE876231CEDF4005DC1DF /* CXWAlertTools.m */,
+				3C0FE86B231CEDF4005DC1DF /* CXWCacheTool.h */,
+				3C0FE875231CEDF4005DC1DF /* CXWCacheTool.m */,
+				3C0FE874231CEDF4005DC1DF /* CXWDataManager.h */,
+				3C0FE86C231CEDF4005DC1DF /* CXWDataManager.m */,
+				3C0FE872231CEDF4005DC1DF /* CXWJumpTools.h */,
+				3C0FE86D231CEDF4005DC1DF /* CXWJumpTools.m */,
+				3C0FE871231CEDF4005DC1DF /* CXWLocationTools.h */,
+				3C0FE869231CEDF4005DC1DF /* CXWLocationTools.m */,
+				3C0FE86E231CEDF4005DC1DF /* CXWShareTool.h */,
+				3C0FE873231CEDF4005DC1DF /* CXWShareTool.m */,
+				3C47328724F8D3F4006344A3 /* XMPermenantThread.h */,
+				3C47328624F8D3F4006344A3 /* XMPermenantThread.m */,
+				3C0FE86A231CEDF4005DC1DF /* XWUserManager.h */,
+				3C0FE870231CEDF4005DC1DF /* XWUserManager.m */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -1667,6 +1685,8 @@
 		3CDF49C824E29CEB009D5ED2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3CDF49C924E29D40009D5ED2 /* XMFilerModel.h */,
+				3CDF49CA24E29D40009D5ED2 /* XMFilerModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1974,10 +1994,12 @@
 				3C0FEB56231CEDF5005DC1DF /* PPNetworkCache.m in Sources */,
 				3C0FEC13231CEDF6005DC1DF /* PGDatePickerView.m in Sources */,
 				3C0FEC4B231CEDF6005DC1DF /* CXWNOKeyBoardManagerViewController.m in Sources */,
+				3CDF49CB24E29D40009D5ED2 /* XMFilerModel.m in Sources */,
 				3C0FEC1B231CEDF6005DC1DF /* PGDatePicker+MonthDayHourMinute.m in Sources */,
 				3C0FEBF9231CEDF6005DC1DF /* IQNSArray+Sort.m in Sources */,
 				3C0FEC1D231CEDF6005DC1DF /* PGDatePicker+DateHourMinute.m in Sources */,
 				3C0FEC21231CEDF6005DC1DF /* PGDatePicker+TimeAndSecond.m in Sources */,
+				3CDF49D124E2BC6F009D5ED2 /* XMBlackWriteFilter.m in Sources */,
 				3C0FEC30231CEDF6005DC1DF /* TAAbstractDotView.m in Sources */,
 				3C0FEB42231CEDF5005DC1DF /* UINavigationController+CXWCustomBar.m in Sources */,
 				3C0FEC1A231CEDF6005DC1DF /* NSBundle+PGDatePicker.m in Sources */,
@@ -2081,6 +2103,7 @@
 				3C0FEC29231CEDF6005DC1DF /* WclEmitterButton.m in Sources */,
 				3C4312AE236B024F00A8EB81 /* NSData+CommonCrypto.m in Sources */,
 				3C0EF68E233C4BDF00E22155 /* XWTestOneViewController.m in Sources */,
+				3CDF49CE24E2BB86009D5ED2 /* XMGrayFilter.m in Sources */,
 				3C0FEBEB231CEDF6005DC1DF /* FSSegmentTitleView.m in Sources */,
 				3C0FEC26231CEDF6005DC1DF /* PGDatePicker+Year.m in Sources */,
 				3C0FEB37231CEDF5005DC1DF /* UIImage+Extension.m in Sources */,
@@ -2091,6 +2114,7 @@
 				3C0FEB58231CEDF5005DC1DF /* NSString+URL.m in Sources */,
 				3C0FEBC9231CEDF6005DC1DF /* WMScrollView.m in Sources */,
 				3C0FEC51231CEDF6005DC1DF /* XWTabbarController.m in Sources */,
+				3C47328824F8D3F4006344A3 /* XMPermenantThread.m in Sources */,
 				3C0FEC52231CEDF6005DC1DF /* main.m in Sources */,
 				3C0FEBE2231CEDF6005DC1DF /* TOCropViewController.m in Sources */,
 				3CB0ECD72367E9B700B84792 /* CCPScrollView.m in Sources */,

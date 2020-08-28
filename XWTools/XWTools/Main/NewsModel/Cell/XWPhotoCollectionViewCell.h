@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XMFilerModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XWPhotoCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, copy) NSString *titleName;
+@property (nonatomic, strong) XMFilerModel *currentModel;
 
 
 @end
