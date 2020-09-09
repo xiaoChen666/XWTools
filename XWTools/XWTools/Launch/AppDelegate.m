@@ -11,6 +11,8 @@
 #import "XWWelcomeViewController.h"
 #import "XWTabbarController.h"
 #import "PPHTTPRequest.h"
+ #import <SDWebImage/SDWebImage.h>
+#import  <SDWebImageWebPCoder/SDWebImageWebPCoder.h>
 @interface AppDelegate ()
 
 @end
@@ -23,6 +25,12 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    
+    SDImageWebPCoder*webPCoder = [SDImageWebPCoder sharedCoder];
+
+    [[SDImageCodersManager sharedManager] addCoder:webPCoder];
+
+
     
 
     if ([[CXWDataManager shareManager] isFirstLaunch]) {

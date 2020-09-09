@@ -16,11 +16,23 @@ PODS:
     - AFNetworking/NSURLSession
   - GPUImage (0.1.7)
   - JSONModel (1.8.0)
+  - libwebp (1.1.0):
+    - libwebp/demux (= 1.1.0)
+    - libwebp/mux (= 1.1.0)
+    - libwebp/webp (= 1.1.0)
+  - libwebp/demux (1.1.0):
+    - libwebp/webp
+  - libwebp/mux (1.1.0):
+    - libwebp/demux
+  - libwebp/webp (1.1.0)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.7)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
+  - SDWebImageWebPCoder (0.3.1):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.0)
   - SVProgressHUD (2.2.5)
   - UMCAnalytics (6.0.5):
     - UMCCommon
@@ -50,6 +62,7 @@ DEPENDENCIES:
   - Masonry (~> 1.1.0)
   - MJRefresh (~> 3.1.15.7)
   - SDWebImage (~> 5.0.0)
+  - SDWebImageWebPCoder
   - SVProgressHUD
   - UMCAnalytics
   - UMCCommon
@@ -64,9 +77,11 @@ SPEC REPOS:
     - AFNetworking
     - GPUImage
     - JSONModel
+    - libwebp
     - Masonry
     - MJRefresh
     - SDWebImage
+    - SDWebImageWebPCoder
     - SVProgressHUD
     - UMCAnalytics
     - UMCCommon
@@ -77,15 +92,17 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  libwebp: 04242ef451672185c1fe41b285a034d2fbda483c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDWebImageWebPCoder: ce58a29621c2806dd5c36695ed192cf67163ff9d
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UMCAnalytics: 045be2cd1ec05aa95ad62405a850757f932e2d59
   UMCCommon: 971f324a5a99c9d662ae040a815e7e3d7ef8b2a8
   UMCShare: e0cef55c0fd6051254c8cda1d0630eb578b27bad
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 31b0e6caf7a0a8d2965bbf7293dbbb9d4444dc6a
+PODFILE CHECKSUM: 5cf40667758c0b2353fdfce021fe471c2b87b05f
 
 COCOAPODS: 1.9.1
