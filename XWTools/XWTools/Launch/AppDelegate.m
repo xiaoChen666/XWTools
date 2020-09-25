@@ -24,58 +24,17 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    
-    SDImageWebPCoder*webPCoder = [SDImageWebPCoder sharedCoder];
-
-    [[SDImageCodersManager sharedManager] addCoder:webPCoder];
-
-
-    
 
     if ([[CXWDataManager shareManager] isFirstLaunch]) {
-//        self.window.rootViewController = [[XWWelcomeViewController alloc] init];
+
         XWTabbarController *tab =  [[XWTabbarController alloc] init];
         self.window.rootViewController = tab;
     } else {
         self.window.rootViewController = [[XWTabbarController alloc] init];
     }
-    
-    NSLog(@"开始--%@",[NSDate date]);
-    [PPHTTPRequest startNetwork:^(CXWNetPublicModel *NetModel) {
-        //
-    }];
-    
-    
-    NSLog(@"--sdasdkasdask");
-    
+
     [self.window makeKeyAndVisible];
-    
-    
-    
-    
-//    UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, KAPPWidth, KAppHeight)];
-//
-//    CGSize viewSize = [UIScreen mainScreen].bounds.size;
-//    NSString *viewOr = @"Portrait";//垂直
-//    NSString *launchImage = nil;
-//    NSArray *launchImages =  [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
-//
-//    for (NSDictionary *dict in launchImages) {
-//        CGSize imageSize = CGSizeFromString(dict[@"UILaunchImageSize"]);
-//
-//        if (CGSizeEqualToSize(viewSize, imageSize) && [viewOr isEqualToString:dict[@"UILaunchImageOrientation"]]) {
-//            launchImage = dict[@"UILaunchImageName"];
-//        }
-//    }
-//
-//    imgV.image = [UIImage imageNamed:launchImage];
-//    [[UIApplication sharedApplication].delegate.window addSubview:imgV];
-    
-    
-   
-    
-    
+
     return YES;
 }
 

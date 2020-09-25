@@ -15,6 +15,7 @@
 
 #import "XWTabbar.h"
 
+#import "HCClangTrace.h"
 @interface XWTabbarController ()
 @property (nonatomic, strong) CXWBaseNavigationController *testNavi;
 @end
@@ -37,6 +38,17 @@
 
     // Do any additional setup after loading the view.
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [HCClangTrace generateOrderFile];
+    });
+    
+}
+
 
 - (void)hiddenTabbarTopLine {
     CGRect rect = CGRectMake(0, 0, KAPPWidth, KAppHeight);

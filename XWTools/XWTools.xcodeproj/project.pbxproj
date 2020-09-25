@@ -215,6 +215,7 @@
 		3C47328824F8D3F4006344A3 /* XMPermenantThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C47328624F8D3F4006344A3 /* XMPermenantThread.m */; };
 		3C5FC9DB2341E5FE0040B858 /* XWTextCodeVerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5FC9DA2341E5FE0040B858 /* XWTextCodeVerifyViewController.m */; };
 		3C5FC9DE2341E64D0040B858 /* XWTextCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5FC9DD2341E64D0040B858 /* XWTextCodeView.m */; };
+		3C8EA634251DF16800436ADC /* HCClangTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8EA633251DF16800436ADC /* HCClangTrace.m */; };
 		3CA9A52F23385376003EC10D /* XWCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA9A52E23385376003EC10D /* XWCameraViewController.m */; };
 		3CB0ECD72367E9B700B84792 /* CCPScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB0ECD62367E9B700B84792 /* CCPScrollView.m */; };
 		3CDF49CB24E29D40009D5ED2 /* XMFilerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF49CA24E29D40009D5ED2 /* XMFilerModel.m */; };
@@ -656,6 +657,8 @@
 		3C5FC9DA2341E5FE0040B858 /* XWTextCodeVerifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWTextCodeVerifyViewController.m; sourceTree = "<group>"; };
 		3C5FC9DC2341E64D0040B858 /* XWTextCodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWTextCodeView.h; sourceTree = "<group>"; };
 		3C5FC9DD2341E64D0040B858 /* XWTextCodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWTextCodeView.m; sourceTree = "<group>"; };
+		3C8EA632251DF16800436ADC /* HCClangTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCClangTrace.h; sourceTree = "<group>"; };
+		3C8EA633251DF16800436ADC /* HCClangTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCClangTrace.m; sourceTree = "<group>"; };
 		3CA9A52D23385376003EC10D /* XWCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWCameraViewController.h; sourceTree = "<group>"; };
 		3CA9A52E23385376003EC10D /* XWCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWCameraViewController.m; sourceTree = "<group>"; };
 		3CB0ECD52367E9B700B84792 /* CCPScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPScrollView.h; sourceTree = "<group>"; };
@@ -1564,6 +1567,8 @@
 				3C0FEABF231CEDF5005DC1DF /* AppDelegate.h */,
 				3C0FEAC6231CEDF5005DC1DF /* AppDelegate.m */,
 				3C0FEAC9231CEDF5005DC1DF /* Info.plist */,
+				3C8EA632251DF16800436ADC /* HCClangTrace.h */,
+				3C8EA633251DF16800436ADC /* HCClangTrace.m */,
 				3C0FEAC4231CEDF5005DC1DF /* main.m */,
 				3C0FEAC7231CEDF5005DC1DF /* XWTabbar.h */,
 				3C0FEAC1231CEDF5005DC1DF /* XWTabbar.m */,
@@ -1992,6 +1997,7 @@
 				3C0FEB15231CEDF5005DC1DF /* XWLoginBaseViewController.m in Sources */,
 				3C0FEBDF231CEDF6005DC1DF /* LLSimpleCamera+Helper.m in Sources */,
 				3C0FEB57231CEDF5005DC1DF /* NSString+AES.m in Sources */,
+				3C8EA634251DF16800436ADC /* HCClangTrace.m in Sources */,
 				3C0FEB35231CEDF5005DC1DF /* UIButton+Delay.m in Sources */,
 				3C0FEB55231CEDF5005DC1DF /* PPNetworkHelper.m in Sources */,
 				3C20B32B23405DBF007B11EE /* WMTableViewController.m in Sources */,
@@ -2356,6 +2362,7 @@
 					"$(PROJECT_DIR)/XWTools/VendorFramework/UMSDK/share/share_ios_6.9.5/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/XWTools/VendorFramework/UMSDK/share/share_ios_6.9.5/SocialLibraries/QQ",
 				);
+				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AVSNest.XWTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2397,6 +2404,7 @@
 					"$(PROJECT_DIR)/XWTools/VendorFramework/UMSDK/share/share_ios_6.9.5/SocialLibraries/Sina",
 					"$(PROJECT_DIR)/XWTools/VendorFramework/UMSDK/share/share_ios_6.9.5/SocialLibraries/QQ",
 				);
+				OTHER_CFLAGS = "-fsanitize-coverage=func,trace-pc-guard";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AVSNest.XWTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
