@@ -2352,6 +2352,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGET_NAME)/Support/PCH/Header.h";
 				INFOPLIST_FILE = XWTools/Launch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2394,6 +2395,7 @@
 				GCC_PREFIX_HEADER = "$(SRCROOT)/$(TARGET_NAME)/Support/PCH/Header.h";
 				INFOPLIST_FILE = XWTools/Launch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_GENERATE_MAP_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -32,27 +32,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
-    JQScrollNumberLabel *label = [[JQScrollNumberLabel alloc] initWithNumber:[NSNumber numberWithInt:0] font:[UIFont systemFontOfSize:16]];
-    [self.view addSubview:label];
     
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).with.offset(0);
-        make.top.equalTo(self.view).with.offset(150);
-        make.size.mas_equalTo(CGSizeMake(100, 18));
-    }];
+    NSMutableDictionary *muDic = [NSMutableDictionary dictionary];
+    [muDic setValue:nil forKey:@"aaa"];
+//    [muDic setObject:nil forKey:@"aa"];
     
-    self.label = label;
+//    NSObject *obj = [[NSObject alloc] init];
+//    [obj setValue:@"" forKey:@"isa"];
     
-    self.count = 1;
+    
     // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    self.count= self.count+5;
-    [self.label changeToNumber:[NSNumber numberWithInt:self.count] animated:YES];
     
 }
 
